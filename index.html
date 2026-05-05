@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antigravity Lab - Projects Hub</title>
+    <meta name="description" content="Antigravityプロジェクトのポータルサイト。タイマーや文字起こしツールなどを集約。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="bg-container" id="bg-container">
+        <!-- Particles will be injected by JS -->
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">Antigravity Lab</div>
+        <div class="nav-links">
+            <button class="nav-item" id="btn-home">Home</button>
+            <button class="nav-item" data-app="timer" id="btn-timer">Retro Timer</button>
+            <button class="nav-item" data-app="transcriber" id="btn-transcriber">AI Transcriber</button>
+        </div>
+    </nav>
+
+    <main class="main-viewport">
+        <!-- Welcome Screen -->
+        <div class="welcome-screen" id="welcome-screen">
+            <h1>Welcome to the Lab</h1>
+            <p>Antigravityで作成された、重力に縛られない創造的なプロジェクトたちをご紹介します。</p>
+        </div>
+
+        <!-- App Container -->
+        <div class="app-container" id="app-container">
+            <iframe id="app-iframe" src="" title="App View"></iframe>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
