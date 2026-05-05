@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Invader Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="MISSION START">MISSION START</h1>
+        </header>
+        
+        <div class="timer-display">
+            <span id="minutes">03</span>:<span id="seconds">00</span>
+        </div>
+
+        <div class="controls">
+            <button id="startStopBtn" class="btn">START</button>
+            <button id="resetBtn" class="btn reset">RESET</button>
+        </div>
+    </div>
+
+    <!-- Popup Notification -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <p id="popupMessage">残り時間: 02:00</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# --- System Files ---
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# --- Python / Backend ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+.venv
+env/
+build/
+dist/
+
+# --- Project Specific (Optional Exclusions) ---
+# Transcriberのバックエンド（ローカル実行用）を公開したくない場合に除外します
+# transcriber/main.py
+# transcriber/requirements.txt

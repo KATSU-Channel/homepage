@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local AI Transcriber</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    <div class="container">
+        <header>
+            <h1>Local AI <span>Transcriber</span></h1>
+            <p>プライバシーを守りながら、ローカル環境で音声をテキストに変換</p>
+        </header>
+
+        <main>
+            <div class="upload-section" id="dropZone">
+                <input type="file" id="audioInput" accept="audio/*" hidden>
+                <div class="upload-content">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </div>
+                    <h3>音源ファイルを選択</h3>
+                    <p>またはファイルをここにドラッグ＆ドロップ</p>
+                    <button class="btn primary" id="selectBtn">ファイルを選ぶ</button>
+                    <div id="fileName" class="file-name"></div>
+                </div>
+            </div>
+
+            <div class="action-section">
+                <button class="btn start-btn" id="transcribeBtn" disabled>文字起こし開始</button>
+                <div id="loader" class="loader hidden">
+                    <div class="spinner"></div>
+                    <p>AIが文字起こし中...</p>
+                </div>
+            </div>
+
+            <div class="result-section">
+                <div class="result-header">
+                    <h3>文字起こし結果</h3>
+                    <button class="btn-icon" id="copyBtn" title="コピー">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    </button>
+                </div>
+                <div class="result-window" id="resultWindow">
+                    <p class="placeholder">ここに文字起こしの結果が表示されます。</p>
+                </div>
+                <div class="result-footer">
+                    <span id="charCount">0</span> 文字
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Local AI Transcriber - Powered by Faster-Whisper</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

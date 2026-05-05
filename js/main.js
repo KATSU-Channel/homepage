@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Set iframe source based on app name
         // Assumption: folders are sibling to 'homepage'
         const paths = {
-            timer: '../timer/index.html',
-            transcriber: '../transcriber/index.html'
+            timer: 'timer/index.html',
+            transcriber: 'transcriber/index.html'
         };
 
         if (paths[appName]) {
