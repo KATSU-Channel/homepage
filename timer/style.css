@@ -68,8 +68,11 @@ header h1 {
 }
 
 .timer-display {
-    font-size: 4rem;
-    margin: 2rem 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 5rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    margin: 1.5rem 0;
     text-shadow: var(--text-shadow);
     color: #fff;
 }
@@ -183,8 +186,8 @@ header h1 {
     }
 
     .timer-display {
-        font-size: 2.5rem; /* Reduced from 4rem */
-        margin: 1.5rem 0;
+        font-size: 3.5rem; /* Adjusted for Outfit font */
+        margin: 1rem 0;
     }
 
     .controls {
