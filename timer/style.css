@@ -170,3 +170,29 @@ header h1 {
     80% { clip: rect(40px, 9999px, 80px, 0); }
     100% { clip: rect(10px, 9999px, 40px, 0); }
 }
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .timer-display {
+        font-size: 2.5rem; /* Reduced from 4rem */
+        margin: 1.5rem 0;
+    }
+
+    .controls {
+        gap: 0.5rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1rem;
+        font-size: 0.7rem;
+    }
+}
