@@ -1,9 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const bgContainer = document.getElementById('bg-container');
-    const welcomeScreen = document.getElementById('welcome-screen');
+    const homeContent = document.getElementById('home-content');
     const appContainer = document.getElementById('app-container');
     const appIframe = document.getElementById('app-iframe');
+    const appTitleDisplay = document.getElementById('active-app-title');
     const navItems = document.querySelectorAll('.nav-item');
+    const projectCards = document.querySelectorAll('.project-card');
+    const btnBackHome = document.getElementById('btn-back-home');
 
     // --- Particle Background ---
     function createParticles() {
@@ -12,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const particle = document.createElement('div');
             particle.className = 'particle';
             
-            // Random properties
             const size = Math.random() * 3 + 1;
             const left = Math.random() * 100;
             const duration = Math.random() * 15 + 10;
@@ -37,31 +39,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (appName === 'home') {
             document.getElementById('btn-home').classList.add('active');
-            welcomeScreen.classList.remove('hidden');
+            homeContent.classList.remove('hidden');
             appContainer.classList.remove('visible');
             setTimeout(() => {
                 appIframe.src = '';
+                appTitleDisplay.textContent = 'App View';
             }, 300);
             return;
         }
 
         // Identify current button
-        const activeBtn = document.querySelector(`[data-app="${appName}"]`);
+        const activeBtn = document.querySelector(`.nav-item[data-app="${appName}"]`);
         if (activeBtn) activeBtn.classList.add('active');
 
-        // Hide welcome, show app
-        welcomeScreen.classList.add('hidden');
+        // Hide home, show app
+        homeContent.classList.add('hidden');
         appContainer.classList.add('visible');
 
-        // Set iframe source based on app name
-        // Assumption: folders are sibling to 'homepage'
-        const paths = {
-            timer: 'timer/index.html',
-            transcriber: 'transcriber/index.html'
+        const appData = {
+            timer: { title: 'Retro Timer', path: 'timer/index.html' },
+            transcriber: { title: 'AI Transcriber', path: 'transcriber/index.html' }
         };
 
-        if (paths[appName]) {
-            appIframe.src = paths[appName];
+        if (appData[appName]) {
+            appIframe.src = appData[appName].path;
+            appTitleDisplay.textContent = appData[appName].title;
         }
     }
 
@@ -71,6 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const app = item.getAttribute('data-app') || 'home';
             switchApp(app);
         });
+    });
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const app = card.getAttribute('data-app');
+            switchApp(app);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+
+    btnBackHome.addEventListener('click', () => {
+        switchApp('home');
     });
 
     // Initial state

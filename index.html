@@ -28,14 +28,52 @@
     </nav>
 
     <main class="main-viewport">
-        <!-- Welcome Screen -->
-        <div class="welcome-screen" id="welcome-screen">
-            <h1>Welcome to the Lab</h1>
-            <p>Antigravityで作成された、重力に縛られない創造的なプロジェクトたちをご紹介します。</p>
+        <!-- Home Content (Visible when no app is active) -->
+        <div class="home-content" id="home-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 class="hero-title">Antigravity Lab</h1>
+                <p class="hero-subtitle">境界を超え、重力に縛られない創造の実験場。</p>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="projects-section">
+                <h2 class="section-title">Showcase</h2>
+                <div class="projects-grid">
+                    <div class="project-card" data-app="timer">
+                        <div class="card-icon">⏲️</div>
+                        <h3>Retro Timer</h3>
+                        <p>8-bitの世界観で時を刻む、インベーダー・スタイルのタイマー。</p>
+                        <button class="btn-launch">Explore</button>
+                    </div>
+                    <div class="project-card" data-app="transcriber">
+                        <div class="card-icon">🎙️</div>
+                        <h3>AI Transcriber</h3>
+                        <p>高度なAIアルゴリズムによる、シームレスな音声文字起こしツール。</p>
+                        <button class="btn-launch">Explore</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about-section">
+                <div class="glass-panel">
+                    <h3>About the Lab</h3>
+                    <p>Antigravity Labは、テクノロジーとデザインの融合を探求するクリエイティブ・ハブです。全てのプロジェクトは、使いやすさと視覚的な驚きを両立させることを目標に設計されています。</p>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>&copy; 2026 Antigravity Lab. All rights reserved.</p>
+            </footer>
         </div>
 
-        <!-- App Container -->
+        <!-- App Container (Visible when an app is active) -->
         <div class="app-container" id="app-container">
+            <div class="app-header">
+                <button class="btn-back" id="btn-back-home">&larr; Back to Lab</button>
+                <span id="active-app-title">App View</span>
+            </div>
             <iframe id="app-iframe" src="" title="App View"></iframe>
         </div>
     </main>
