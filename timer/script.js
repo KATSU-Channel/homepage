@@ -19,7 +19,7 @@ function initAudio() {
     }
 }
 
-function play8bitNote(freq, duration, type = 'square', volume = 0.1) {
+function play8bitNote(freq, duration, type = 'square', volume = 0.3) {
     if (!audioCtx) return;
     const osc = audioCtx.createOscillator();
     const gain = audioCtx.createGain();
@@ -48,11 +48,11 @@ function startBGM() {
         if (!isRunning) return;
         
         // Bass note
-        play8bitNote(notes[step % 4], 0.2, 'square', 0.05);
+        play8bitNote(notes[step % 4], 0.2, 'square', 0.15);
         
         // Occasional high note for flavor
         if (step % 8 === 0) {
-            play8bitNote(440, 0.1, 'square', 0.03);
+            play8bitNote(440, 0.1, 'square', 0.1);
         }
         
         step++;
@@ -67,8 +67,8 @@ function stopBGM() {
 function playNotificationSound() {
     initAudio();
     // High-pitched "ding"
-    play8bitNote(880, 0.1, 'square', 0.1);
-    setTimeout(() => play8bitNote(1760, 0.2, 'square', 0.08), 100);
+    play8bitNote(880, 0.1, 'square', 0.3);
+    setTimeout(() => play8bitNote(1760, 0.2, 'square', 0.2), 100);
 }
 
 // --- Timer Logic ---
